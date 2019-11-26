@@ -1,0 +1,39 @@
+// "off" or 0 - turn the rule off
+// "warn" or 1 - turn the rule on as a warning (does not affect exit code)
+// "error" or 2 - turn the rule on as an error (exit code will be 1)
+
+{
+  "extends": "jsmos",
+
+  "plugins": ["react", "react-hooks"],
+
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/base-config.js"
+      }
+    }
+  },
+
+  "rules": {
+    "react-hooks/rules-of-hooks": 2, // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": 0, // Checks effect dependencies
+
+    "react/jsx-closing-bracket-location": [2, "after-props"],
+    "react/jsx-curly-spacing": [2, "never", {"spacing": { "allowMultiline": false, "objectLiterals": "never" }}],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/self-closing-comp": 2,
+    "react/jsx-tag-spacing": [2, {
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never",
+      "beforeClosing": "never"
+    }],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/require-render-return": 0,
+    "react/jsx-wrap-multilines": [2, { "declaration": true, "assignment": true, "return": true }],
+    "react/jsx-no-bind": [0, { "ignoreRefs": false, "allowArrowFunctions": false, "allowBind": false }]
+  }
+}
