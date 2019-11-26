@@ -1,24 +1,26 @@
 {
-  "name": "mini-react-app",
+  "name": "dwtn-reactjs-atx-landing-page",
   "version": "1.0.0",
-  "description": "minimalist react application w/ webpack",
+  "description": "downtown reactjs atx landing page",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahtou/mini-react-app.git"
+    "url": "git+https://gitlab.com/downtown-react-meetup/landing-page.git"
   },
   "keywords": [
-    "mini",
+    "atx",
+    "community",
+    "downtown",
     "react",
-    "app",
-    "webpack"
+    "landing page",
+    "web page"
   ],
   "author": "bahtou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bahtou/mini-react-app/issues"
+    "url": "https://gitlab.com/downtown-react-meetup/landing-page/issues"
   },
-  "homepage": "https://github.com/bahtou/mini-react-app#readme",
+  "homepage": "https://gitlab.com/downtown-react-meetup/landing-page#readme",
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
@@ -68,7 +70,7 @@
   },
   "scripts": {
     "build": "npm run clean && webpack --config ./webpack/index.js --env production",
-    "build:dev": "npm run clean && webpack --config ./webpack/index.js --env production && python3 -m http.server 8000 --directory build",
+    "build:run": "npm run clean && webpack --config ./webpack/index.js --env production && python3 -m http.server 8000 --directory build",
     "clean": "rimraf recordsPath.json ./build",
     "refresh": "rm -rf node_modules/ package-lock.json && npm install",
     "start": "nodemon --watch webpack --exec 'webpack-dev-server --config ./webpack/index.js --env development'"
