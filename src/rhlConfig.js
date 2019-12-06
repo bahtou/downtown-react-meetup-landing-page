@@ -6,5 +6,6 @@ setConfig({
   logLevel: 'error',
   pureSFC: false,
   ignoreSFC: true, // RHL will be __completely__ disabled for SFC (this will fix hook)
-  pureRender: true // RHL will not change render method (this will remove side effect from Classes)
+  pureRender: true, // RHL will not change render method (this will remove side effect from Classes)
+  reloadHooks: true // enables or disables hooks treatment
 });

@@ -1,0 +1,74 @@
+@import 'Styles/mediaQueries.css';
+@import 'Styles/fonts.css';
+@import 'Styles/variables.css';
+
+
+.sectionLayout {
+  display: grid;
+  grid-template-columns: $mobile-grid;
+  column-gap: 2.4vw;
+  padding: 4rem 0 4.7rem;
+  background-image: $dark-gradient-background;
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: $desktop-grid;
+    column-gap: 1.25vw;
+    padding: 12.5rem 0 8.5rem;
+  }
+}
+
+.heroContainer {
+  grid-column: 2 / 8;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 5rem;
+
+  @include for-tablet-portrait-up {
+    grid-column: 2 / 8;
+    margin-bottom: 10rem;
+  }
+
+  .title, .location {
+    @include font-bold;
+    text-align: center;
+  }
+
+  .logo {
+    margin: 8.2rem auto;
+
+    @include for-tablet-portrait-up {
+      margin: 11.7rem auto;
+    }
+  }
+}
+
+.navContainer {
+  grid-column: 3 / 7;
+
+  @include for-mobile-landscape-up {
+    grid-column: 4 / 6;
+  }
+
+  .navList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style: none;
+
+    @include for-mobile-landscape-up {
+      justify-content: space-around;
+    }
+
+    li {
+      font-size: 2.4rem;
+      line-height: 2.9rem;
+
+      > {
+        a:link, a:visited {
+          text-decoration: none;
+          color: #B5DFF9;
+        }
+      }
+    }
+  }
+}
