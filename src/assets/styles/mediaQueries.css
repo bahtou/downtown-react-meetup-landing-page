@@ -1,0 +1,18 @@
+@custom-media --mobile-landscape-up (min-width: 480px);
+@custom-media --tablet-portrait-up (min-width: 768px);
+@custom-media --tablet-landscape-up (min-width: 992px);
+@custom-media --desktop-up (min-width: 1200px);
+
+
+@mixin for-mobile-landscape-up {
+  @media (--mobile-landscape-up) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (--tablet-portrait-up) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (--tablet-landscape-up) { @content; }
+}
+@mixin for-desktop-up {
+  @media (--desktop-up) { @content; }
+}

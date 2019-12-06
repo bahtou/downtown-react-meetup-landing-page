@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Exo2 Light';
+  src: url(~Fonts/Exo2-Light.otf) format('opentype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Exo2 Medium';
+  src: url(~Fonts/Exo2-Medium.otf) format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Exo2 Semi Bold';
+  src: url(~Fonts/Exo2-SemiBold.otf) format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Exo2 Bold';
+  src: url(~Fonts/Exo2-Bold.otf) format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Exo2 Black';
+  src: url(~Fonts/Exo2-Black.otf) format('opentype');
+  font-style: normal;
+  font-weight: 900;
+}
+
+%font-optimizing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin font-light {
+  @extend %font-optimizing;
+  font-family: 'Exo2 Light', Lato, 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin font-medium {
+  @extend %font-optimizing;
+  font-family: 'Exo2 Medium', Lato, 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin font-semiBold {
+  @extend %font-optimizing;
+  font-family: 'Exo2 Semi Bold', Lato, 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin font-bold {
+  @extend %font-optimizing;
+  font-family: 'Exo2 Bold', Lato, 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin font-black {
+  @extend %font-optimizing;
+  font-family: 'Exo2 Black', Lato, 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
