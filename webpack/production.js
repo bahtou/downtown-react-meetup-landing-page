@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const { cssPaths } = require('./base-params');
+const cssImport = require('postcss-import');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
@@ -9,6 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
+const { cssPaths, postcssPaths } = require('./base-params');
 
 module.exports = {
   mode: 'production',
@@ -24,7 +25,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: true,
-              import: true,
+              import: false,
               modules: {
                 mode: 'local',
                 // localIdentName: '[folder]__[local]--[hash:base64:10]',
@@ -42,12 +43,18 @@ module.exports = {
             }
           },
           {
-            loader: 'sass-loader',
+            loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              includePaths: cssPaths,
-              outputStyle: 'expanded',
-              precision: 8
+              ident: 'postcss',
+              plugins: loader => [
+                cssImport({
+                  root: postcssPaths,
+                  path: ['assets', 'components', 'elements', 'sections'],
+                  skipDuplicates: true
+                }),
+                require('precss') // SASS-like markup,
+              ]
             }
           }
         ]

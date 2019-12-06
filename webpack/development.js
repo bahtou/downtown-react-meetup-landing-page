@@ -1,11 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const { contentBasePath, cssPaths, host, port } = require('./base-params');
+const cssImport = require('postcss-import');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const { contentBasePath, cssPaths, host, port, postcssPaths } = require('./base-params');
 
 
 module.exports = {
@@ -90,12 +92,12 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: true,
-              import: true,
+              import: false,
               modules: {
                 mode: 'local',
                 // localIdentName: '[folder]__[local]--[hash:base64:10]',
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
-                // localIdentName: '[local]',
+                // localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                localIdentName: '[local]',
                 context: path.resolve(__dirname, 'src'),
                 // hashPrefix: 'custom-hash-asdfsadfsdaf-asdfsadffsad-asdfsadf'
                 // getLocalIdent: https://github.com/webpack-contrib/css-loader#getlocalident
@@ -108,12 +110,18 @@ module.exports = {
             }
           },
           {
-            loader: 'sass-loader',
+            loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              includePaths: cssPaths,
-              outputStyle: 'expanded',
-              precision: 8
+              ident: 'postcss',
+              plugins: loader => [
+                cssImport({
+                  root: postcssPaths,
+                  path: ['assets', 'components', 'elements', 'sections'],
+                  skipDuplicates: true
+                }),
+                require('precss') // SASS-like markup,
+              ]
             }
           }
         ]
