@@ -51,6 +51,41 @@ For a screen size of 375px, a layout of 16 columns with a gutter size of 9px giv
 * Parternship Form
 * Speaker Form
 
+#### Join Submission
+```
+POST
+{
+  email: String-maxLen(64)-required
+}
+```
+
+#### Partnership Form
+```
+POST
+{
+  name: String-maxLen(64)-required,
+  email: String-maxLen(64)-required,
+  jobTitle: String-maxLen(64),
+  company: String-maxLen(64),
+  partnership: [Enum(String-'venue', 'food', 'drinks', 'speakers', 'workshop', 'hackathon')]-maxLen(6)-required
+}
+```
+
+#### Speaker Form
+```
+Post
+{
+  name: String-maxLen(64)-required,
+  email: String-maxLen(64)-required,
+  jobTitle: String-maxLen(64),
+  company: String-maxLen(64),
+  experience: Enum(String, '< 6 months', '< 1 year', '< 3 years', '< 5 years', '< 7 years', '> 7 years'),
+  topic: String-maxLen(128),
+  topicType: [Enum(String-'lightening', 'interactive', 'showcase', 'instructional', 'panel']-maxLen(5),
+  topicDuration: Enum(String-'15min', '30-45min', '1hr', '> 1hr')
+}
+```
+
 ## Level-Up
 
 * [BabelJS](https://babeljs.io/)
