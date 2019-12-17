@@ -1,0 +1,28 @@
+@import 'Styles/mediaQueries.css';
+@import 'Styles/fonts.css';
+@import 'Styles/variables.css';
+
+
+.formText {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 20px;
+
+  > label {
+    margin-bottom: 10px;
+    @include font-light;
+    font-size: 2.4rem;
+  }
+
+  > input {
+    height: 5rem;
+    padding-left: 1rem;
+
+    @include font-semiBold;
+    color: $dark-blue;
+
+    border: none;
+    background: $white;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,22 @@
+@import 'Styles/mediaQueries.css';
+@import 'Styles/fonts.css';
+@import 'Styles/variables.css';
+
+
+.formButton {
+  width: 25rem;
+  margin: 0;
+  margin-top: 4rem;
+  padding: 14px 0 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  @include font-black;
+  font-size: 2.4rem;
+  letter-spacing: 1.5px;
+  color: $cream-blue;
+  background-color: $blue;
+
+  cursor: pointer;
+}

@@ -97,7 +97,7 @@ module.exports = {
                 mode: 'local',
                 // localIdentName: '[folder]__[local]--[hash:base64:10]',
                 // localIdentName: '[path][name]__[local]--[hash:base64:5]',
-                localIdentName: '[local]',
+                localIdentName: '[local]__[hash:base64:4]',
                 context: path.resolve(__dirname, 'src'),
                 // hashPrefix: 'custom-hash-asdfsadfsdaf-asdfsadffsad-asdfsadf'
                 // getLocalIdent: https://github.com/webpack-contrib/css-loader#getlocalident

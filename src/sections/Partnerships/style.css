@@ -1,0 +1,44 @@
+@import 'Styles/mediaQueries.css';
+@import 'Styles/fonts.css';
+@import 'Styles/variables.css';
+
+
+.sectionLayout {
+  display: grid;
+  grid-template-columns: $mobile-grid;
+  column-gap: 2.4vw;
+  padding: 4rem 0 4.7rem;
+  background-color: $light-background;
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: $desktop-grid;
+    column-gap: 1.25vw;
+    padding: 12.5rem 0 8.5rem;
+  }
+}
+
+.block {
+  grid-column: 2 / 8;
+
+  .title {
+    @include font-bold;
+    margin-bottom: 3rem;
+  }
+
+  .partnershipForm {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 30px 15px 40px;
+
+    border-radius: 10px;
+    background-color: $dark-background;
+  }
+
+  fieldset {
+    > div:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .checkboxList{}
+}
