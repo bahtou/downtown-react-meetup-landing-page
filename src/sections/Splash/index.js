@@ -3,21 +3,21 @@ import React from 'react';
 import Logo from 'Elements/Logo';
 import {
   sectionLayout,
-  heroContainer, title, logo, location,
-  navContainer, navList
+  heroBlock, title, logo, location,
+  navBlock, navList
 } from './styles.css';
 
 
 const Splash = () => {
   return (
     <section className={sectionLayout}>
-      <div className={heroContainer}>
+      <div className={heroBlock}>
         <h1 className={title}>Downtown ReactJS</h1>
         <Logo className={logo}/>
         <h2 className={location}>Austin, TX</h2>
       </div>
 
-      <nav className={navContainer}>
+      <nav className={navBlock}>
         <ul className={navList}>
           <li>
             <a href="#community"><h3>Community</h3></a>

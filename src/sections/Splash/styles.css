@@ -17,7 +17,7 @@
   }
 }
 
-.heroContainer {
+.heroBlock {
   grid-column: 2 / 8;
   display: flex;
   flex-flow: column nowrap;
@@ -42,7 +42,7 @@
   }
 }
 
-.navContainer {
+.navBlock {
   grid-column: 3 / 7;
 
   @include for-mobile-landscape-up {
