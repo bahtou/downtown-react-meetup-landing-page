@@ -17,6 +17,13 @@ body {
   line-height: 1.9rem;
   box-sizing: border-box;
 }
+fieldset {
+  padding: 0;
+  border: none;
+}
+ul {
+  list-style: none;
+}
 
 h1 {
   font-size: 5.4rem;
