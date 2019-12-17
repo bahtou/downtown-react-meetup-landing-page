@@ -5,12 +5,15 @@
 * `npm install`
 * `npm start`
 
+Open browser to `localhost:8000`
+
 ## Background
 
 Downtown ReactJS ATX Meetup webpage as an introduction to ReactJS.
 
 Sections
 * Splash
+* Community
 * Join
 * Partnership
 * Speakers
@@ -90,10 +93,10 @@ Post
 
 * [BabelJS](https://babeljs.io/)
 * [WebpackJS](https://webpack.js.org/)
-* [react-hot-loader](https://github.com/gaearon/react-hot-loader)
-* [postcss](https://postcss.org/)
+* [React hot loader](https://github.com/gaearon/react-hot-loader)
+* [Postcss](https://postcss.org/)
 
 ### CSS
 
-* [guide to grids](https://css-tricks.com/snippets/css/complete-guide-grid/)
-* [break points](https://getflywheel.com/layout/css-breakpoints-responsive-design-how-to)
+* [Guide to grids](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [Break points](https://getflywheel.com/layout/css-breakpoints-responsive-design-how-to)

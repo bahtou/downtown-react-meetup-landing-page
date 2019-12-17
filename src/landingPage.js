@@ -3,6 +3,7 @@ import React from 'react';
 
 import {
   Splash,
+  Community,
   Join,
   Partnerships,
   Speakers,
@@ -14,6 +15,8 @@ const LandingPage = () => {
   return (
     <>
       <Splash />
+
+      <Community />
 
       <Join />
 

@@ -20,6 +20,9 @@ const Splash = () => {
       <nav className={navContainer}>
         <ul className={navList}>
           <li>
+            <a href="#community"><h3>Community</h3></a>
+          </li>
+          <li>
             <a href="#join">Join</a>
           </li>
           <li>
