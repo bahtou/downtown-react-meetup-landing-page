@@ -13,7 +13,7 @@ const Splash = () => {
     <section className={sectionLayout}>
       <div className={heroBlock}>
         <h1 className={title}>Downtown ReactJS</h1>
-        <Logo className={logo}/>
+        <Logo className={logo} />
         <h2 className={location}>Austin, TX</h2>
       </div>
 

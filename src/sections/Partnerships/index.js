@@ -32,24 +32,22 @@ const Partnerships = () => {
               name="Name"
               value={name}
               onChange={ev => setName(ev.target.value)}
-              required="true"
-            />
+              required />
 
             <FormTextField
               name="Email"
               value={email}
               onChange={ev => setEmail(ev.target.value)}
-              required="true"
-            />
+              required />
 
             <div>
               <label htmlFor="name">Job Title *</label>
-              <input type="text"/>
+              <input type="text" />
             </div>
 
             <div>
               <label htmlFor="name">Company *</label>
-              <input type="text"/>
+              <input type="text" />
             </div>
 
           </fieldset>
@@ -83,7 +81,7 @@ const Partnerships = () => {
             </ul>
           </fieldset>
 
-          <FormButton styles={{ 'alignSelf': 'center' }}>Submit</FormButton>
+          <FormButton styles={{ alignSelf: 'center' }}>Submit</FormButton>
         </form>
       </div>
 
