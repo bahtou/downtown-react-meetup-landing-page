@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const cssImport = require('postcss-import');
+const { dashedCssClassName } = require('css-loader-dashed-class-names')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
@@ -32,7 +33,7 @@ module.exports = {
     hotOnly: true,
     inline: true,
 
-    //capturing compilation related warnings and errors
+    // capturing compilation related warnings and errors
     overlay: true,
 
     publicPath: '/',
@@ -59,7 +60,7 @@ module.exports = {
       entrypoints: false,
 
       errors: true,
-      errorDetails: true, //depends on {errors: true}
+      errorDetails: true, // depends on {errors: true}
       hash: true,
       modules: false,
       moduleTrace: true,
@@ -98,7 +99,8 @@ module.exports = {
                 // localIdentName: '[folder]__[local]--[hash:base64:10]',
                 // localIdentName: '[path][name]__[local]--[hash:base64:5]',
                 localIdentName: '[local]__[hash:base64:4]',
-                context: path.resolve(__dirname, 'src'),
+                getLocalIdent: dashedCssClassName,
+                context: path.resolve(__dirname, 'src')
                 // hashPrefix: 'custom-hash-asdfsadfsdaf-asdfsadffsad-asdfsadf'
                 // getLocalIdent: https://github.com/webpack-contrib/css-loader#getlocalident
                 // localIdentRegExp: https://github.com/webpack-contrib/css-loader#localidentregexp
@@ -114,6 +116,7 @@ module.exports = {
             options: {
               sourceMap: true,
               ident: 'postcss',
+              parser: 'postcss-scss',
               plugins: loader => [
                 cssImport({
                   root: postcssPaths,

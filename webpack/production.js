@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const cssImport = require('postcss-import');
+const { dashedCssClassName } = require('css-loader-dashed-class-names')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
@@ -10,6 +11,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const { cssPaths, postcssPaths } = require('./base-params');
+
 
 module.exports = {
   mode: 'production',
@@ -31,6 +33,7 @@ module.exports = {
                 // localIdentName: '[folder]__[local]--[hash:base64:10]',
                 // localIdentName: '[path][name]__[local]--[hash:base64:5]',
                 localIdentName: '[local]:[hash:base64:5]',
+                getLocalIdent: dashedCssClassName,
                 context: path.resolve(__dirname, 'src'),
                 hashPrefix: 'custom-hash'
                 // getLocalIdent: https://github.com/webpack-contrib/css-loader#getlocalident
@@ -47,6 +50,7 @@ module.exports = {
             options: {
               sourceMap: true,
               ident: 'postcss',
+              parser: 'postcss-scss',
               plugins: loader => [
                 cssImport({
                   root: postcssPaths,

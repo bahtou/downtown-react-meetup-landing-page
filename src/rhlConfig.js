@@ -1,4 +1,4 @@
-//https://github.com/gaearon/react-hot-loader#setconfigconfig
+// https://github.com/gaearon/react-hot-loader#setconfigconfig
 import { setConfig } from 'react-hot-loader';
 
 
