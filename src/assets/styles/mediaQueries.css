@@ -1,9 +1,11 @@
+/* Given Form-Factor */
 @custom-media --mobile-landscape-up (min-width: 480px);
 @custom-media --tablet-portrait-up (min-width: 768px);
 @custom-media --tablet-landscape-up (min-width: 992px);
 @custom-media --desktop-up (min-width: 1200px);
 
 
+/* Form-Factor Boundaries */
 @mixin for-mobile-landscape-up {
   @media (--mobile-landscape-up) { @content; }
 }

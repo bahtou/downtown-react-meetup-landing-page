@@ -1,87 +1,107 @@
 @import 'Styles/mediaQueries.css';
 @import 'Styles/fonts.css';
 @import 'Styles/variables.css';
+@import 'Styles/layouts.css';
 
 
-.sectionLayout {
-  display: grid;
-  grid-template-columns: $mobile-grid;
-  column-gap: 2.4vw;
-  padding: 4rem 0 4.7rem;
+.splash-layout {
+  /* what is its layout? (parent-child) */
+  @include mobile-layout;
+
+  /* what does it look like? */
   background-image: $dark-gradient-background;
 
+  /* update form-factor */
   @include for-tablet-portrait-up {
-    grid-template-columns: $desktop-grid;
-    column-gap: 1.25vw;
-    padding: 12.5rem 0 8.5rem;
+    /* what is it's layout? */
+    @include desktop-layout;
   }
 }
 
-.heroBlock {
+.hero-block {
+  /* what is its layout (container-component)? */
   grid-column: 2 / 8;
+  /* what is its layout (component-element)? */
   display: flex;
   flex-flow: column nowrap;
+  /* spacing regardless of what follows */
   margin-bottom: 5rem;
 
+  /* update form-factor */
   @include for-tablet-portrait-up {
+    /* what is its layout (container-component)? */
     grid-column: 2 / 8;
+    /* spacing regardless of what follows */
     margin-bottom: 5rem;
   }
 
   .title, .location {
+    /* what does it look like? */
     @include font-bold;
+    /* what is its layout? (element) */
     text-align: center;
   }
 
   .logo {
+    /* what is its layout? (element) */
     margin: 8.2rem auto;
 
+    /* update form-factor */
     @include for-tablet-portrait-up {
+      /* what is its layout? (element) */
       margin: 11.7rem auto;
     }
   }
 }
 
 .navBlock {
+  // what is its layout (container-component)?
   grid-column: 3 / 7;
 
+  // update form-factor
   @include for-mobile-landscape-up {
+    /* what is its layout (container-component)? */
     grid-column: 4 / 6;
   }
 
   .navList {
+    // what is its layout? (component-element)
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    // what does it look like?
     list-style: none;
 
+    // update form-factor
     @include for-mobile-landscape-up {
-      justify-content: space-around;
+      // what is its layout? (element)
+      // justify-content: space-around;
     }
 
-    li:first-child {
-      flex: 0 0 100%;
-      text-align: center;
-      margin-bottom: 1.5rem;
-
-      h3 {
-        font-size: 3rem;
-        @include for-mobile-landscape-up {
-          font-size: 3.6rem;
-        }
+    .listItem {
+      > a {
+        // what does it look like?
+        @include font-bold;
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        letter-spacing: 0.10rem;
+      }
+      > a:link, a:visited { // behavioral
+        // what does it look like?
+        text-decoration: none;
+        color: #B5DFF9;
       }
     }
 
-    li {
-      @include font-bold;
-      font-size: 2.4rem;
-      line-height: 2.9rem;
+    .listItem:first-child {
+      /* what is its layout? (element) */
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 1.5rem;
 
-      > {
-        a:link, a:visited {
-          text-decoration: none;
-          color: #B5DFF9;
-        }
+      > a {
+        /* what does it look like */
+        font-size: 3rem;
       }
     }
   }

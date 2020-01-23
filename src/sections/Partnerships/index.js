@@ -23,7 +23,8 @@ const Partnerships = () => {
         <h1 className={title}>Partnership</h1>
         <span>Interested in sponsoring?</span>
 
-        <form id="partnershipForm"
+        <form
+          id="partnershipForm"
           className={partnershipForm}
           onSubmit={handleSubmit}>
 
@@ -55,8 +56,8 @@ const Partnerships = () => {
             <legend>How would you like to partner up? *</legend>
             <ul className={checkboxList}>
               <li>
-                <input id="venue" type="checkbox" value="venue" />
                 <label htmlFor="venue">Venue</label>
+                <input id="venue" type="checkbox" value="venue" />
               </li>
               <li>
                 <input id="food" type="checkbox" value="food" />

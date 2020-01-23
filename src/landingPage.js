@@ -11,23 +11,21 @@ import {
 } from 'Sections';
 
 
-const LandingPage = () => {
-  return (
-    <>
-      <Splash />
+const LandingPage = () => (
+  <>
+    <Splash />
 
-      <Community />
+    <Community />
 
-      <Join />
+    <Join />
 
-      <Partnerships />
+    <Partnerships />
 
-      <Speakers />
+    <Speakers />
 
-      <AboutUs />
-    </>
-  );
-};
+    <AboutUs />
+  </>
+);
 
 
 export default hot(LandingPage);

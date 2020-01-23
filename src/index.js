@@ -6,7 +6,7 @@ import 'Styles/global.css';
 
 import React from 'react';
 import { render } from 'react-dom';
-import LandingPage from './landingPage.js';
+import LandingPage from './landingPage';
 
 
 render(

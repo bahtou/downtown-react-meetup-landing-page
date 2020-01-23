@@ -1,0 +1,22 @@
+/*
+  POSITION between container & compoent
+  POSITION between component & elements
+  POSITION between component & compoent
+ */
+@import 'Styles/variables.css';
+
+
+/* POSITION between container & compoent */
+@mixin mobile-layout {
+  display: grid;
+  grid-template-columns: $mobile-grid;
+  column-gap: 2.4vw;
+  padding: 4rem 0 4.7rem;
+}
+
+@mixin desktop-layout {
+  display: grid;
+  grid-template-columns: $desktop-grid;
+  column-gap: 1.25vw;
+  padding: 12.5rem 0 8.5rem;
+}
