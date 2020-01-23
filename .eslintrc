@@ -5,6 +5,10 @@
 {
   "extends": "rmos",
 
+  "globals": {
+    "document": "readonly"
+  },
+
   "parser": "babel-eslint",
 
   "plugins": ["react", "react-hooks"],
@@ -38,6 +42,13 @@
     "react/jsx-wrap-multilines": [2, { "declaration": true, "assignment": true, "return": true }],
     "react/jsx-no-bind": [0, { "ignoreRefs": false, "allowArrowFunctions": false, "allowBind": false }],
 
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "labelComponents": [],
+      "labelAttributes": [],
+      "controlComponents": [],
+      "assert": "either",
+      "depth": 25
+    }],
     "jsx-a11y/label-has-for": 0
   }
 }
