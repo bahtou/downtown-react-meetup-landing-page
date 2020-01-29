@@ -1,44 +1,71 @@
 @import 'Styles/mediaQueries.css';
 @import 'Styles/fonts.css';
 @import 'Styles/variables.css';
+@import 'Styles/layouts.css';
 
 
-.sectionLayout {
-  display: grid;
-  grid-template-columns: $mobile-grid;
-  column-gap: 2.4vw;
-  padding: 4rem 0 4.7rem;
+.partnership-layout {
+  /* where does it go? */
+  /* where is it positioned? */
+  @include mobile-layout;
+  /* what does it look like? */
   background-color: $light-background;
 
+  /* update form-factor */
   @include for-tablet-portrait-up {
-    grid-template-columns: $desktop-grid;
-    column-gap: 1.25vw;
-    padding: 12.5rem 0 8.5rem;
+    /* where does it go? */
+    /* where is it positioned? */
+    @include desktop-layout;
   }
 }
 
-.block {
+.form-block {
+  /* where is it positioned? */
   grid-column: 2 / 8;
 
-  .title {
+  .form-title {
+    // what does it look like?
     @include font-bold;
+    // spacing regardless of what follows
     margin-bottom: 3rem;
   }
+  .form-subtitle {
+    display: block;
+    @include font-medium;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
 
-  .partnershipForm {
+  .partnership-form {
     display: flex;
     flex-flow: column nowrap;
     padding: 30px 15px 40px;
 
     border-radius: 10px;
     background-color: $dark-background;
-  }
 
-  fieldset {
-    > div:first-child {
+    .inputFields > div:first-child {
       margin-top: 0;
     }
-  }
 
-  .checkboxList{}
+    .checkbox-fields {
+      margin-top: 2rem;
+
+      legend {
+        @include font-light;
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        margin-bottom: 2rem;
+      }
+
+      .checkboxList {
+        display: flex;
+        flex-flow: column nowrap;
+      }
+    }
+
+    .form-button {
+      align-self: center;
+    }
+  }
 }

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-import { FormButton, FormTextField } from 'Elements';
+import { FormButton, FormCheckbox, FormTextInput } from 'Elements';
 import {
-  sectionLayout, block,
-  title, partnershipForm,
+  partnershipLayout, formBlock,
+  formTitle, formSubtitle, formButton,
+  partnershipForm, inputFields, checkboxFields,
   checkboxList
 } from './style.css';
 
@@ -11,6 +12,8 @@ import {
 const Partnerships = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
+  const [companyName, setCompanyName] = useState('');
 
   function handleSubmit(event) {
     alert('form submitted');
@@ -18,71 +21,68 @@ const Partnerships = () => {
   }
 
   return (
-    <section id="partnership" className={sectionLayout}>
-      <div className={block}>
-        <h1 className={title}>Partnership</h1>
-        <span>Interested in sponsoring?</span>
+    <section id="partnership" className={partnershipLayout}>
+      <div className={formBlock}>
+        <h1 className={formTitle}>Partnership</h1>
+        <span className={formSubtitle}>Interested in sponsoring?</span>
 
-        <form
-          id="partnershipForm"
-          className={partnershipForm}
-          onSubmit={handleSubmit}>
-
-          <fieldset>
-            <FormTextField
-              name="Name"
+        <form id="partnershipForm" className={partnershipForm} onSubmit={handleSubmit}>
+          <fieldset className={inputFields}>
+            <FormTextInput
+              name="Name *"
               value={name}
               onChange={ev => setName(ev.target.value)}
               required />
 
-            <FormTextField
-              name="Email"
+            <FormTextInput
+              name="Email *"
               value={email}
               onChange={ev => setEmail(ev.target.value)}
               required />
 
-            <div>
-              <label htmlFor="name">Job Title *</label>
-              <input type="text" />
-            </div>
+            <FormTextInput
+              name="Job Title *"
+              value={jobTitle}
+              onChange={ev => setJobTitle(ev.target.value)}
+              required />
 
-            <div>
-              <label htmlFor="name">Company *</label>
-              <input type="text" />
-            </div>
-
+            <FormTextInput
+              name="Company Name *"
+              value={companyName}
+              onChange={ev => setCompanyName(ev.target.value)}
+              required />
           </fieldset>
-          <fieldset>
+
+          <fieldset className={checkboxFields}>
             <legend>How would you like to partner up? *</legend>
             <ul className={checkboxList}>
-              <li>
-                <label htmlFor="venue">Venue</label>
-                <input id="venue" type="checkbox" value="venue" />
-              </li>
-              <li>
-                <input id="food" type="checkbox" value="food" />
-                <label htmlFor="food">Food</label>
-              </li>
-              <li>
-                <input id="drinks" type="checkbox" value="drinks" />
-                <label htmlFor="drinks">Drinks</label>
-              </li>
-              <li>
-                <input id="speakers" type="checkbox" value="speakers" />
-                <label htmlFor="speakers">Speakers</label>
-              </li>
-              <li>
-                <input id="workshop" type="checkbox" value="workshop" />
-                <label htmlFor="workshop">Workshop</label>
-              </li>
-              <li>
-                <input id="hackathon" type="checkbox" value="hackathon" />
-                <label htmlFor="hackathon">Hackathon</label>
-              </li>
+              <FormCheckbox
+                name="Venue"
+                value="venue" />
+
+              <FormCheckbox
+                name="Food"
+                value="food" />
+
+              <FormCheckbox
+                name="Drinks"
+                value="drinks" />
+
+              <FormCheckbox
+                name="Speakers"
+                value="speakers" />
+
+              <FormCheckbox
+                name="Workshop"
+                value="workshop" />
+
+              <FormCheckbox
+                name="Hackathon"
+                value="hackathon" />
             </ul>
           </fieldset>
 
-          <FormButton styles={{ alignSelf: 'center' }}>Submit</FormButton>
+          <FormButton className={formButton}>Submit</FormButton>
         </form>
       </div>
 

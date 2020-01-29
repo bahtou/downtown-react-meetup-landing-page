@@ -2,19 +2,16 @@ import React from 'react';
 import { formText } from './styles.css';
 
 
-function FormTextField({
+function FormTextInput({
   name='form text',
   required=false,
   value='',
   onChange,
+  className='',
   styles={}
 }) {
-  if (required) {
-    name = `${name} *`;
-  }
-
   return (
-    <div className={formText}>
+    <div className={`${formText} ${className}`} style={styles}>
       <label htmlFor={name}>{name}</label>
       <input id={name} type="text" value={value} onChange={onChange} required={required} />
     </div>
@@ -22,4 +19,4 @@ function FormTextField({
 }
 
 
-export default FormTextField;
+export default FormTextInput;

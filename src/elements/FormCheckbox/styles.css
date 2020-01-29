@@ -1,0 +1,53 @@
+@import 'Styles/mediaQueries.css';
+@import 'Styles/fonts.css';
+@import 'Styles/variables.css';
+
+
+.form-checkbox {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  margin-bottom: 0.6rem;
+
+  > label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    > span {
+      @include font-light;
+      font-size: 2.4rem;
+      line-height: 2.9rem;
+      margin-left: 1.7rem;
+    }
+
+     > input {
+      appearance: none;
+      height: 2rem;
+      width: 2rem;
+      border: 3px solid #B5DFF982;
+      border-radius: 0.5rem;
+      outline: none;
+      transition-duration: 0.3s;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    > input:active {
+      border: 2px solid #34495E;
+    }
+    > input:checked {
+      border: 2px solid $cream-blue;
+    }
+    > input:checked + span::before {
+      content: '\2713';
+      display: block;
+      font-size: 3rem;
+      font-weight: 500;
+      text-align: center;
+      color: $cream-blue;
+      position: absolute;
+      left: 0.5rem;
+      bottom: 0.75rem;
+    }
+  }
+}

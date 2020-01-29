@@ -1,2 +1,3 @@
 export { default as FormButton } from './FormButton';
-export { default as FormTextField } from './FormTextField';
+export { default as FormTextInput } from './FormTextInput';
+export { default as FormCheckbox } from './FormCheckbox';
