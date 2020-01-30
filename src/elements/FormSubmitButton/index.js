@@ -1,11 +1,11 @@
 import React from 'react';
-import { formButton } from './styles.css';
+import { formSubmitButton } from './styles.css';
 
 
-function FormButton({ children='form button', className='', styles={} }) {
+function FormSubmitButton({ children='form button', className='', styles={} }) {
   return (
     <input
-      className={`${formButton} ${className}`}
+      className={`${formSubmitButton} ${className}`}
       style={styles}
       type="submit"
       value={children} />
@@ -13,7 +13,7 @@ function FormButton({ children='form button', className='', styles={} }) {
 }
 
 
-export default FormButton;
+export default FormSubmitButton;
 
 
 const modifiers = {
