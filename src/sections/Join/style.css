@@ -4,7 +4,7 @@
 @import 'Styles/layouts.css';
 
 
-.join-layout {
+.section-layout {
   /* where does it go? */
   /* where is it positioned? */
   @include mobile-layout;
@@ -19,71 +19,53 @@
   }
 }
 
-.form-block {
+.section-block {
   /* where is it positioned? */
   grid-column: 2 / 8;
 
-  .form-title {
+  .section-title {
     // what does it look like?
     @include font-bold;
     // spacing regardless of what follows
     margin-bottom: 3rem;
   }
-  .form-subtitle {
+  .section-subtitle {
     display: block;
     @include font-medium;
     font-size: 1.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
 
   .join-form {
     display: flex;
     flex-flow: column nowrap;
-    padding: 30px 15px 40px;
-
-    border-radius: 10px;    
 
     input {
       height: 5rem;
-      padding-left: 1rem;  
+      padding-left: 1rem;
       @include font-semiBold;
       color: $dark-blue;
-  
+
       border: none;
       background: $white;
       width: 100%;
-    }
-
-    .form-button {
-      @include font-black;
-      font-size: 2.4rem;
-      border-radius: 0;
-      background-color: $blue;
-      letter-spacing: 1.5px;
-      color: $cream-blue;
-      /* default style overrides */
-      margin-top: 0;
-      height: auto;
-      padding-left: 0; 
     }
   }
 }
 
 .cta {
-  margin-top: 100px;
-  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 7rem;
+
+  .cta-text { // should be the same as form-subtitle above
+    display: block;
+    @include font-medium;
+    font-size: 1.6rem;
+    margin-bottom: 5rem;
+  }
+
+  > a {
+    align-self: center;
+  }
 }
-
-.ctaLogo {
-  position: relative;
-  width: 100%;
-  margin-top: 47px;
-  text-align: center;
-}
-
-.ctaText {
-   @include font-medium;
-   font-size: 1.8rem;
- }
-
-

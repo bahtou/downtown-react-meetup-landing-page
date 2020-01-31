@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { FormSubmitButton, FormCheckbox, FormTextInput } from 'Elements';
 import {
-  partnershipLayout, formBlock,
-  formTitle, formSubtitle, formButton,
+  sectionLayout, sectionBlock,
+  sectionTitle, sectionSubtitle, formButton,
   partnershipForm, inputFields, checkboxFields,
   checkboxList
 } from './style.css';
@@ -33,10 +33,10 @@ const Partnerships = () => {
   }
 
   return (
-    <section id="partnership" className={partnershipLayout}>
-      <div className={formBlock}>
-        <h1 className={formTitle}>Partnership</h1>
-        <span className={formSubtitle}>Interested in sponsoring?</span>
+    <section id="partnership" className={sectionLayout}>
+      <div className={sectionBlock}>
+        <h1 className={sectionTitle}>Partnership</h1>
+        <span className={sectionSubtitle}>Interested in sponsoring?</span>
 
         <form id="partnershipForm" className={partnershipForm} onSubmit={handleSubmit}>
           <fieldset className={inputFields}>
@@ -100,7 +100,9 @@ const Partnerships = () => {
             </ul>
           </fieldset>
 
-          <FormSubmitButton className={formButton}>Submit</FormSubmitButton>
+          <div className={formButton}>
+            <FormSubmitButton>Submit</FormSubmitButton>
+          </div>
         </form>
       </div>
 

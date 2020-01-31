@@ -4,11 +4,12 @@ import { formSubmitButton } from './styles.css';
 
 function FormSubmitButton({ children='form button', className='', styles={} }) {
   return (
-    <input
+    <button
       className={`${formSubmitButton} ${className}`}
       style={styles}
-      type="submit"
-      value={children} />
+      type="submit">
+      { children }
+    </button>
   );
 }
 

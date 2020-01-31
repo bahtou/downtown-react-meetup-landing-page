@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { FormButton, GitterLogo } from 'Elements';
+import { GitterLinkLogo, FormSubmitButton } from 'Elements';
 import {
-  joinLayout, formBlock,
-  formTitle, formSubtitle, formButton,
-  joinForm, inputFields, cta, ctaText, ctaLogo
+  sectionLayout, sectionBlock,
+  sectionTitle, sectionSubtitle,
+  joinForm, cta, ctaText
 } from './style.css';
 
 
@@ -17,24 +17,19 @@ const Join = () => {
   }
 
   return (
-    <section id="join" className={joinLayout}>
-      <div className={formBlock}>
-        <h1 className={formTitle}>Join</h1>
-        <span className={formSubtitle}>Subscribe to monthly meetup events & get notified of upcoming events like community workshops, hackathons, presentations and recordings.</span>
+    <section id="join" className={sectionLayout}>
+      <div className={sectionBlock}>
+        <h1 className={sectionTitle}>Join</h1>
+        <span className={sectionSubtitle}>Subscribe to monthly meetup events & get notified of upcoming events like community workshops, hackathons, presentations and recordings.</span>
 
         <form id="joinForm" className={joinForm} onSubmit={handleSubmit}>
-          <fieldset className={inputFields}>
-            <input id='joinEmail' type="text" value={email} onChange={ev => setEmail(ev.target.value)} required />
-          </fieldset>
-          <FormButton className={formButton}>Subscribe</FormButton>
+          <input id="joinEmail" type="text" value={email} onChange={ev => setEmail(ev.target.value)} required />
+          <FormSubmitButton styles={{ borderRadius: '0 0 10px 10px' }}>Subscribe</FormSubmitButton>
         </form>
+
         <div className={cta}>
           <span className={ctaText}>Have ReactJS questions? Seeking resources? Want to help others? Join our Gitter group!</span>
-        </div>
-        <div className={ctaLogo}>
-          <a href='https://google.com'>
-            <GitterLogo/>
-          </a>
+          <GitterLinkLogo />
         </div>
       </div>
     </section>
