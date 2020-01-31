@@ -49,6 +49,13 @@
       "assert": "either",
       "depth": 25
     }],
-    "jsx-a11y/label-has-for": 0
+    "jsx-a11y/label-has-for": 0,
+
+    "max-lines-per-function": ["off", {
+      "max": 80,
+      "skipBlankLines": true,
+      "skipComments": true,
+      "IIFEs": true
+    }],
   }
 }
