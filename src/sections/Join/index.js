@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 
-import { FormButton } from 'Elements';
+import { FormButton, GitterLogo } from 'Elements';
 import {
   joinLayout, formBlock,
   formTitle, formSubtitle, formButton,
   joinForm, inputFields, cta, ctaText, ctaLogo
 } from './style.css';
 
-import GitterLogo from 'Elements/GitterLogo';
 
 const Join = () => {
   const [email, setEmail] = useState('');
-  
+
   function handleSubmit(event) {
     alert('form submitted');
     event.preventDefault();
