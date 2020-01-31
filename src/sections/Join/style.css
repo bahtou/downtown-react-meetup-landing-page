@@ -1,0 +1,89 @@
+@import 'Styles/mediaQueries.css';
+@import 'Styles/fonts.css';
+@import 'Styles/variables.css';
+@import 'Styles/layouts.css';
+
+
+.join-layout {
+  /* where does it go? */
+  /* where is it positioned? */
+  @include mobile-layout;
+  /* what does it look like? */
+  background-color: $dark-background;
+
+  /* update form-factor */
+  @include for-tablet-portrait-up {
+    /* where does it go? */
+    /* where is it positioned? */
+    @include desktop-layout;
+  }
+}
+
+.form-block {
+  /* where is it positioned? */
+  grid-column: 2 / 8;
+
+  .form-title {
+    // what does it look like?
+    @include font-bold;
+    // spacing regardless of what follows
+    margin-bottom: 3rem;
+  }
+  .form-subtitle {
+    display: block;
+    @include font-medium;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .join-form {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 30px 15px 40px;
+
+    border-radius: 10px;    
+
+    input {
+      height: 5rem;
+      padding-left: 1rem;  
+      @include font-semiBold;
+      color: $dark-blue;
+  
+      border: none;
+      background: $white;
+      width: 100%;
+    }
+
+    .form-button {
+      @include font-black;
+      font-size: 2.4rem;
+      border-radius: 0;
+      background-color: $blue;
+      letter-spacing: 1.5px;
+      color: $cream-blue;
+      /* default style overrides */
+      margin-top: 0;
+      height: auto;
+      padding-left: 0; 
+    }
+  }
+}
+
+.cta {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.ctaLogo {
+  position: relative;
+  width: 100%;
+  margin-top: 47px;
+  text-align: center;
+}
+
+.ctaText {
+   @include font-medium;
+   font-size: 1.8rem;
+ }
+
+
