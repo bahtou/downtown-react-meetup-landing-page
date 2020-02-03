@@ -3,10 +3,10 @@
 @import 'Styles/variables.css';
 
 
-.formButton {
-  width: 25rem;
+.form-submit-button {
+  min-width: 24.9rem;
+  width: 100%;
   margin: 0;
-  margin-top: 4rem;
   padding: 14px 0 18px;
 
   border: none;
@@ -19,4 +19,8 @@
   background-color: $blue;
 
   cursor: pointer;
+
+  @include for-mobile-landscape-up {
+    max-width: 32.8rem;
+  }
 }

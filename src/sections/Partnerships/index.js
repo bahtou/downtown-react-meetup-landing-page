@@ -1,30 +1,42 @@
 import React, { useState } from 'react';
 
-import { FormButton, FormCheckbox, FormTextInput } from 'Elements';
+import { FormSubmitButton, FormCheckbox, FormTextInput } from 'Elements';
 import {
-  partnershipLayout, formBlock,
-  formTitle, formSubtitle, formButton,
+  sectionLayout, sectionBlock,
+  sectionTitle, sectionSubtitle, formButton,
   partnershipForm, inputFields, checkboxFields,
   checkboxList
 } from './style.css';
 
+// ['venue', 'food', 'drinks', 'speakers', 'workshop', 'hackathon']
 
 const Partnerships = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [jobTitle, setJobTitle] = useState('');
   const [companyName, setCompanyName] = useState('');
+  const [checkedboxes, setCheckedboxes] = useState([]);
+
+  function handleCheckboxChange(ev) {
+    const { checked, value } = ev.target;
+
+    const newCheckedboxes = checked
+      ? [...checkedboxes, value]
+      : checkedboxes.filter(el => el !== value);
+
+    setCheckedboxes(newCheckedboxes);
+  }
 
   function handleSubmit(event) {
-    alert('form submitted');
     event.preventDefault();
+    alert(`form submitted ${JSON.stringify({ name, email, jobTitle, companyName, checkedboxes })}`);
   }
 
   return (
-    <section id="partnership" className={partnershipLayout}>
-      <div className={formBlock}>
-        <h1 className={formTitle}>Partnership</h1>
-        <span className={formSubtitle}>Interested in sponsoring?</span>
+    <section id="partnership" className={sectionLayout}>
+      <div className={sectionBlock}>
+        <h1 className={sectionTitle}>Partnership</h1>
+        <span className={sectionSubtitle}>Interested in sponsoring?</span>
 
         <form id="partnershipForm" className={partnershipForm} onSubmit={handleSubmit}>
           <fieldset className={inputFields}>
@@ -58,31 +70,39 @@ const Partnerships = () => {
             <ul className={checkboxList}>
               <FormCheckbox
                 name="Venue"
-                value="venue" />
+                value="venue"
+                onChange={handleCheckboxChange} />
 
               <FormCheckbox
                 name="Food"
-                value="food" />
+                value="food"
+                onChange={handleCheckboxChange} />
 
               <FormCheckbox
                 name="Drinks"
-                value="drinks" />
+                value="drinks"
+                onChange={handleCheckboxChange} />
 
               <FormCheckbox
                 name="Speakers"
-                value="speakers" />
+                value="speakers"
+                onChange={handleCheckboxChange} />
 
               <FormCheckbox
                 name="Workshop"
-                value="workshop" />
+                value="workshop"
+                onChange={handleCheckboxChange} />
 
               <FormCheckbox
                 name="Hackathon"
-                value="hackathon" />
+                value="hackathon"
+                onChange={handleCheckboxChange} />
             </ul>
           </fieldset>
 
-          <FormButton className={formButton}>Submit</FormButton>
+          <div className={formButton}>
+            <FormSubmitButton>Submit</FormSubmitButton>
+          </div>
         </form>
       </div>
 
