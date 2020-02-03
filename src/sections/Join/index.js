@@ -23,10 +23,8 @@ const Join = () => {
         <h1 className={formTitle}>Join</h1>
         <span className={formSubtitle}>Subscribe to monthly meetup events & get notified of upcoming events like community workshops, hackathons, presentations and recordings.</span>
 
-        <form id="joinForm" className={joinForm} onSubmit={handleSubmit}>
-          <fieldset className={inputFields}>
-            <input id='joinEmail' type="text" value={email} onChange={ev => setEmail(ev.target.value)} required />
-          </fieldset>
+        <form id="joinForm" className={joinForm} onSubmit={handleSubmit}>          
+          <input id='joinEmail' type="text" value={email} onChange={ev => setEmail(ev.target.value)} required />          
           <FormButton className={formButton}>Subscribe</FormButton>
         </form>
         <div className={cta}>
