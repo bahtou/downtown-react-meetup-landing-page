@@ -62,9 +62,9 @@
       letter-spacing: 1.5px;
       color: $cream-blue;
       /* default style overrides */
-      margin-top: 0;
       height: auto;
-      padding-left: 0; 
+      width: 100%;
+      max-width: 100%;
     }
   }
 }
