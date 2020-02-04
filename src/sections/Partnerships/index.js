@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import { FormSubmitButton, FormCheckbox, FormTextInput } from 'Elements';
 import {
   sectionLayout, sectionBlock,
-  sectionTitle, sectionSubtitle, formButton,
-  partnershipForm, inputFields, checkboxFields,
-  checkboxList
+  sectionTitle, sectionSubtitle,
+  partnershipForm, inputFields,
+  checkboxFields, checkboxList,
+  formButton, formSubmitButton
 } from './style.css';
 
 // ['venue', 'food', 'drinks', 'speakers', 'workshop', 'hackathon']
@@ -36,7 +37,7 @@ const Partnerships = () => {
     <section id="partnership" className={sectionLayout}>
       <div className={sectionBlock}>
         <h1 className={sectionTitle}>Partnership</h1>
-        <span className={sectionSubtitle}>Interested in sponsoring?</span>
+        <h4 className={sectionSubtitle}>Interested in sponsoring?</h4>
 
         <form id="partnershipForm" className={partnershipForm} onSubmit={handleSubmit}>
           <fieldset className={inputFields}>
@@ -100,12 +101,9 @@ const Partnerships = () => {
             </ul>
           </fieldset>
 
-          <div className={formButton}>
-            <FormSubmitButton>Submit</FormSubmitButton>
-          </div>
+          <FormSubmitButton className={formSubmitButton}>Submit</FormSubmitButton>
         </form>
       </div>
-
     </section>
   );
 };

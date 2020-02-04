@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { GitterLinkLogo, FormSubmitButton } from 'Elements';
+import { LinkGitterLogo, FormSubmitButton } from 'Elements';
 import {
   sectionLayout, sectionBlock,
   sectionTitle, sectionSubtitle,
-  joinForm, cta, ctaText
+  joinForm, formSubmitButton, cta, ctaText
 } from './style.css';
 
 
@@ -24,12 +24,12 @@ const Join = () => {
 
         <form id="joinForm" className={joinForm} onSubmit={handleSubmit}>
           <input id="joinEmail" type="text" value={email} onChange={ev => setEmail(ev.target.value)} required />
-          <FormSubmitButton styles={{ borderRadius: '0 0 10px 10px' }}>Subscribe</FormSubmitButton>
+          <FormSubmitButton className={formSubmitButton}>Subscribe</FormSubmitButton>
         </form>
 
         <div className={cta}>
           <span className={ctaText}>Have ReactJS questions? Seeking resources? Want to help others? Join our Gitter group!</span>
-          <GitterLinkLogo />
+          <LinkGitterLogo />
         </div>
       </div>
     </section>

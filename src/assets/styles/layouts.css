@@ -18,5 +18,5 @@
   display: grid;
   grid-template-columns: $desktop-grid;
   column-gap: 1.25vw;
-  padding: 12.5rem 0 8.5rem;
+  padding: 8.5rem 0 8.5rem;
 }

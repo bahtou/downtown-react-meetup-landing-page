@@ -23,6 +23,12 @@
   /* where is it positioned? */
   grid-column: 2 / 8;
 
+  /* update form-factor */
+  @include for-tablet-portrait-up {
+    /* what is its layout (container-component)? */
+    grid-column: 2 / 8;
+  }
+
   .section-title {
     // what does it look like?
     @include font-bold;
@@ -40,8 +46,12 @@
     display: flex;
     flex-flow: column nowrap;
 
+    @include for-tablet-landscape-up {
+      flex-flow: row nowrap;
+    }
+
     input {
-      height: 5rem;
+      height: 6rem;
       padding-left: 1rem;
       @include font-semiBold;
       color: $dark-blue;
@@ -49,6 +59,15 @@
       border: none;
       background: $white;
       width: 100%;
+    }
+    .form-submit-button {
+      border-radius: 0 0 10px 10px;
+
+      @include for-tablet-landscape-up {
+        max-width: 24.9rem;
+        border-radius: 0 10px 10px 0;
+        margin-left: 0.9rem;
+      }
     }
   }
 }
