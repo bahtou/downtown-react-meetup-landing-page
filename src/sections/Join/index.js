@@ -24,7 +24,7 @@ const Join = () => {
 
         <form id="joinForm" className={joinForm} onSubmit={handleSubmit}>
           <input id="joinEmail" type="text" value={email} onChange={ev => setEmail(ev.target.value)} required />
-          <FormSubmitButton styles={{ borderRadius: '0 0 10px 10px' }}>Subscribe</FormSubmitButton>
+          <FormSubmitButton className={formButton}>Subscribe</FormSubmitButton>
         </form>
 
         <div className={cta}>

@@ -106,3 +106,4 @@ Post
 * [Styling Checkboxes](https://dev.to/proticm/styling-html-checkboxes-is-super-easy-302o)
 * [CSS Tree menu](https://www.thecssninja.com/css/css-tree-menu)
 * [CSS Folding list](http://bradclicks.com/CSSplay/foldingList.html)
+* [Button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role)

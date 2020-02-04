@@ -50,6 +50,19 @@
       background: $white;
       width: 100%;
     }
+
+    .form-button {
+      @include font-black;
+      font-size: 2.4rem;
+      border-radius: 0;
+      background-color: $blue;
+      letter-spacing: 1.5px;
+      color: $cream-blue;
+      /* default style overrides */
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }
 
