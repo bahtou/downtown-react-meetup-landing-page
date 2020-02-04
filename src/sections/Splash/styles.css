@@ -59,7 +59,7 @@
   grid-column: 3 / 7;
 
   // update form-factor
-  @include for-mobile-landscape-up {
+  @include for-desktop-up {
     /* what is its layout (container-component)? */
     grid-column: 4 / 6;
   }
@@ -73,9 +73,9 @@
     list-style: none;
 
     // update form-factor
-    @include for-mobile-landscape-up {
+    @include for-desktop-up {
       // what is its layout? (element)
-      // justify-content: space-around;
+      justify-content: space-around;
     }
 
     .listItem {

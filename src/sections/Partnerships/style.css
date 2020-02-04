@@ -30,10 +30,13 @@
     margin-bottom: 3rem;
   }
   .section-subtitle {
-    display: block;
     @include font-medium;
     font-size: 1.6rem;
     margin-bottom: 2rem;
+
+    @include for-tablet-portrait-up {
+      font-size: 2.4rem;
+    }
   }
 
   .partnership-form {
@@ -69,13 +72,9 @@
       }
     }
 
-    .form-button {
-      // what does it look like?
-      width: 100%;
-      padding: 0 2rem;
-
-      // where is it positioned?
-      text-align: center;
+    .form-submit-button {
+      align-self: center;
+      max-width: 32.8rem;
     }
   }
 }

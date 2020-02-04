@@ -5,6 +5,7 @@
 */
 $mobile-grid: 1fr 1fr 2fr 4fr 4fr 2fr 1fr 1fr;
 $desktop-grid: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+/* $desktop-grid: 219px 110px 109px 219px 219px 109px 110px 219px; */
 
 
 /* BACKGROUND

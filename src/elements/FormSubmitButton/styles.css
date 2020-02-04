@@ -19,8 +19,4 @@
   background-color: $blue;
 
   cursor: pointer;
-
-  @include for-mobile-landscape-up {
-    max-width: 32.8rem;
-  }
 }
