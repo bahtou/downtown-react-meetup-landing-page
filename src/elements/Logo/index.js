@@ -2,9 +2,9 @@ import React from 'react';
 import logo from 'Images/react-meetup-logo_300x268.png';
 
 
-const Logo = ({ className='' }) => {
+const Logo = ({ className='', styles={} }) => {
   return (
-    <img className={className} src={logo} alt="react-meetup-logo" width="300px" />
+    <img className={className} style={styles} src={logo} alt="react-meetup-logo" width="300px" />
   );
 };
 
