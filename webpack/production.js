@@ -153,7 +153,7 @@ module.exports = {
       hash: true,
       cache: true,
       showErrors: true,
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'auto'
     }),
 
     new CleanWebpackPlugin(),

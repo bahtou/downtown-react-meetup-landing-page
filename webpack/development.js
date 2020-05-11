@@ -172,7 +172,7 @@ module.exports = {
       hash: true,
       cache: true,
       showErrors: true,
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'auto'
     }),
 
     new webpack.optimize.LimitChunkCountPlugin({
